@@ -1,19 +1,46 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    "sushi": [
+        {
+            "id": 1,
+            "imgUrl": "https://yobi.efood.dev/images/_2xRIVufmElKDKLTm3H7qs7QYi9P4EdKjQHaXm1p4Pg/pr:large/b3dxaGFyMDE2MDJj/OTBqcmFkb3lleDdo/cnVpcA",
+            "title": "ЁбиМокуёби",
+            "category": "Наборы",
+            "rating": 4
+        },
+        {
+            "id": 2,
+            "imgUrl": "https://yobi.efood.dev/images/-Zujz5rkhLe3ETZDtT9rkW2ZGUOS7f_T0DIALZ2XTpg/pr:large/NWZ6ZWV4eWp5bXM4/cjZtbmdnaGh3MHVy/bm9xbA",
+            "title": "Филадельфия BIG",
+            "category": "Премиум",
+            "rating": 8
+        },
+        {
+            "id": 3,
+            "imgUrl": "https://yobi.efood.dev/images/QxBHptnJVP9jHaRxuyvc5Rnb7GeHCwq1FlBYbhtRc-k/pr:large/NWJyMjJhcGwzdWI1/bW54OXRkdWQzZzRi/cmt3dQ",
+            "title": "Страстный угорь",
+            "category": "Роллы и суши",
+            "rating": 7
+        },
+        {
+            "id": 4,
+            "imgUrl": "https://yobi.efood.dev/images/997a3sqNwz8i8KuPSzAy-eMuCW6ekgUZ2RtB3wqIDPw/pr:large/dXpla3lwY2htZ2V6/bTVoamxqcTZybW96/b3V3NA",
+            "title": "Горячий лосось в сырной тортилье",
+            "category": "Темпура",
+            "rating": 6
+        },
+        {
+            "id": 5,
+            "imgUrl": "https://yobi.efood.dev/images/Ps5ZmOWvL9DBwWcIUE_YNUe0DUUEaP6Yv4urbZ1vyeA/pr:large/dXg3MHYzemgybXln/MWV6ODF5d2sxdWc3/NG13ZQ",
+            "title": "Запечённый с курицей",
+            "category": "Запечённые",
+            "rating": 6
+        },
+        {
+            "id": 6,
+            "imgUrl": "https://yobi.efood.dev/images/Qt4_edyNgGpt32-7S4939yMZRKumMO9cvEWF99T4XkA/pr:large/d2gzaml3MnZibDI4/bHo3ZDQ2d3M2Zms4/MGZibg",
+            "title": "Креветки Темпура",
+            "category": "Горячее и салаты",
+            "rating": 8
+        }
+    ]
 }

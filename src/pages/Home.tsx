@@ -1,11 +1,11 @@
 import React from 'react';
 
+import Filter from '../components/Filter';
+
 const Home = () => {
     return (
         <div>
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
+            <Filter></Filter>
         </div>
     );
 };
