@@ -1,17 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import cl from '../style/Filter.module.css';
 
-const Filter = () => {
+import { useAppSelector } from '../hooks';
 
-    return <div className={cl.wrapper}>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-    </div>;
+import Button from './UI/Button';
+
+const Filter: React.FC = () => {
+    const { category } = useAppSelector((state) => state.SushiSlice);
+    return (
+        <div className={cl.wrapper}>
+            {category.map((item) => (
+                <Link to={item} className={cl.category}>
+                    {item}
+                </Link>
+            ))}
+            <Link to="cart">
+                <Button>Корзрна</Button>
+            </Link>
+        </div>
+    );
 };
 
 export default Filter;

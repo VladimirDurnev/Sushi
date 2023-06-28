@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import AppSlice from './slice/AppSlice';
+import SushiSlice from './slice/SushiSlice';
 
 export const store = configureStore({
-    reducer: { AppSlice },
+    reducer: { SushiSlice },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

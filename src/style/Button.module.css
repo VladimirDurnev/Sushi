@@ -1,0 +1,7 @@
+.MyButton{
+    border-radius: 30px;
+    background-color: #ff6956;
+    border-color: 1px solid black;
+    width: 140px;
+    height: 40px;
+}

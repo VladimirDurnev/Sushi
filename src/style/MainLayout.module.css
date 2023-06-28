@@ -7,11 +7,10 @@
 
 .wrapper {
     background-color: rgb(213, 228, 241);
-    height: 100vh;
     text-align: center;
 }
 
 .container {
-    width: 1400px;
+    max-width: 1400px;
     margin: 0 auto;
 }

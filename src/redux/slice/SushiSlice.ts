@@ -1,32 +1,45 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-import type { PayloadAction } from '@reduxjs/toolkit';
+// import type { PayloadAction } from '@reduxjs/toolkit';
 
-interface AppItem {
-    id: number;
+export interface AppItem {
+    id?: number;
     imgUrl: string;
     title: string;
+    mass: number;
+    description: string;
+    price: number;
     category: string;
     rating: number;
 }
 
 interface AppState {
     list: AppItem[];
+    category: string[];
 }
 export const fetchSushi = createAsyncThunk<AppItem[]>(
-    'sushi/fetchByIdStatus',
+    'sushi/fetchSushi',
     async () => {
         const { data } = await axios.get('http://localhost:3000/sushi');
         return data;
     }
 );
 
+// export const fetchingSushi = createAsyncThunk<AppItem[]>(
+//     'sushi/fetchSushi',
+//     async () => {
+//         const { data } = await axios.get('http://localhost:3000/sushi');
+//         return data;
+//     }
+// )
+
 const initialState: AppState = {
     list: [],
+    category: [],
 };
 
-export const AppSlice = createSlice({
+export const SushiSlice = createSlice({
     name: 'sushi',
     initialState,
     reducers: {
@@ -44,11 +57,13 @@ export const AppSlice = createSlice({
         builder
             .addCase(fetchSushi.fulfilled, (state, action) => {
                 state.list = action.payload;
+                const arr = state.list.map((obj) => obj.category);
+                state.category = [...new Set(arr)];
             })
             .addCase(fetchSushi.rejected, (state, action) => {});
     },
 });
 
-// export const { increment, decrement, incrementByAmount } = AppSlice.actions;
+// export const { increment, decrement, incrementByAmount } = SushiSlice.actions;
 
-export default AppSlice.reducer;
+export default SushiSlice.reducer;

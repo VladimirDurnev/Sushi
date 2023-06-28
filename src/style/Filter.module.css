@@ -1,4 +1,9 @@
 .wrapper{
     list-style: none;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 65px;
+    position: sticky;
+    top: 0
 }

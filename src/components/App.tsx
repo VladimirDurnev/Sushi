@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { useAppDispatch } from '../hooks';
-import { fetchSushi } from '../redux/slice/AppSlice';
+import { fetchSushi } from '../redux/slice/SushiSlice';
 import NotFound from '../pages/NotFound';
 import Home from '../pages/Home';
 
@@ -13,8 +13,7 @@ const App: React.FC = () => {
     useEffect(() => {
         dispatch(fetchSushi());
     }, [dispatch]);
-
-    // @ts-ignore
+    
     return (
         <Routes>
             <Route path="/" element={<MainLayout />}>
