@@ -60,6 +60,87 @@
             "price": 409,
             "category": "Горячее и салаты",
             "rating": 8
+        },
+        {
+            "id": 7,
+            "imgUrl": "https://yobi.efood.dev/images/Dl0w4G3IsCzS5Kx6lvv3pPPstfY99z_gmcoxhK3sr-U/pr:large/c3BvcjZnbGI2Nmd4/cWxuOGJwM3hxYXYz/NnNzNQ",
+            "title": "Три Цезаря",
+            "mass": 790,
+            "description": "Цезарь, Цезарь темпура, Цезарь BIG",
+            "price": 649,
+            "category": "Наборы",
+            "rating": 8
+        },
+        {
+            "id": 8,
+            "imgUrl": "https://yobi.efood.dev/images/kBHymYXnQ9aXfPby0PLSsIbvXwbeNv9Rv4e1o0ZPP2k/pr:large/NGk1enNjNXBjc3M0/Y3lwYmNkMXdnc3pn/aDgxaw",
+            "title": "Сакура",
+            "mass": 835,
+            "description": "Каваи, Цезарь, Лава сяке, Яссай",
+            "price": 799,
+            "category": "Наборы",
+            "rating": 6
+        },
+        {
+            "id": 9,
+            "imgUrl": "https://yobi.efood.dev/images/Ca8fKhyOG1BU2WGELVSFsbk1elJxf4sBEvIvlVnPTYE/pr:large/dXlqZmkyb2VobHo3/NXJueGhsOTFxbmRq/ZDgwbQ",
+            "title": "Соблазнительная фила",
+            "mass": 130,
+            "description": "Рис, мицукан, нори, огурец, лосось",
+            "price": 199,
+            "category": "Роллы и суши",
+            "rating": 6
+        },
+        {
+            "id": 10,
+            "imgUrl": "https://yobi.efood.dev/images/l3rrhgsNXBusqdFaL967g4S8AYJ4pA9ykFwYIBQxlAU/pr:large/OTZhc3ptOHp3aG9k/ZTlhbXRjbjZrbXow/cWdiMQ",
+            "title": "Цезарь темпура",
+            "mass": 240,
+            "description": "Рис, мицукан, сахар, комбу, соль, нори, сыр сливочный, филе куриное, приправа для курицы, огурец, майонез, чеснок, соевый соус, огурец консервированный, мука, яйцо, сухари панировочные",
+            "price": 329,
+            "category": "Темпура",
+            "rating": 9
+        },
+        {
+            "id": 11,
+            "imgUrl": "https://yobi.efood.dev/images/hNs09OsRXPGBS0k0HTKmNXSRdbONbH5MoQMw-AqkonE/pr:large/MXcxNmQ0Z2k4ZjM4/NTFzbTJyeWU4cmtt/Yml2eQ",
+            "title": "Запечённый с лососем",
+            "mass": 190,
+            "description": "Рис, мицукан ,сахар, комбу, соль, нори, лосось, сыр сливочный, огурец, сыр гауда, майонез",
+            "price": 299,
+            "category": "Запечённые",
+            "rating": 10
+        },
+        {
+            "id": 12,
+            "imgUrl": "https://yobi.efood.dev/images/vPh8Ab9yRxik7jFlISdRvhU267-fix_ydCEVAntlIFU/pr:large/dXpvOGlvZGtqaXEz/cTdrYnZpdDBmcmY1/c29hdA",
+            "title": "Цезарь с начос",
+            "mass": 320,
+            "description": "Рис, мицукан, сахар, соль, комбу,сыр сливочный, нори, филе куриное, приправа для курицы, салат, мука, яйцо, сухари панировочные, сыр гауда, майонез, начос, огурец консервированный, соевый соус, чеснок",
+            "price": 239,
+            "category": "Запечённые",
+            "rating": 7
+        },
+        {
+            "id": 13,
+            "imgUrl": "https://yobi.efood.dev/images/3lDi-JhaOgJ82Qa6c5fGQIGU2Zgix1gcE2OS183Vqz8/pr:large/eHNxaWtudDNkOXBp/MXd3b2FxczdmZzhs/eHc1ZQ",
+            "title": "Три Цезаря",
+            "mass": 1010,
+            "description": "Каппа маки, Цезарь темпура, Лава темпура, Тамаго маки, Филадельфия лосось лайт.",
+            "price": 999,
+            "category": "Наборы",
+            "rating": 8
+        },
+        {
+            "id": 14,
+            "imgUrl": "https://yobi.efood.dev/images/zVjhDLhyyjXa8acmoDGSGrDQD7bTSL8oxLqKkQ1iKTI/pr:large/eHRubGQ3emk3MWRz/c2oxMWo5NXZ2a2pm/cHdxeQ",
+            "title": "ЁбиСуёби",
+            "mass": 1010,
+            "description": "Филадельфия лосось лайт, Цезарь темпура, Тортилья овощная, Калифорния темпура, Спейшл NEW.",
+            "price": 999,
+            "category": "Наборы",
+            "rating": 8
         }
+        
     ]
 }

@@ -5,7 +5,6 @@ import cl from '../style/Item.module.css';
 
 import Button from './UI/Button';
 
-
 const Item: React.FC<AppItem> = ({
     imgUrl,
     title,
@@ -20,10 +19,12 @@ const Item: React.FC<AppItem> = ({
                 <h3>{title}</h3>
                 <p>{mass + ' г'}</p>
             </div>
-            {description}
-            
-            <div className={cl.title}>
-                <h3>{price}</h3>
+            <p className={cl.description}>
+                {description.length > 20 && description.substring(0, 100) + ' ...'}
+            </p>
+
+            <div className={cl.price}>
+                <h3>{price + ' ₽'}</h3>
                 <Button>В корзину</Button>
             </div>
         </div>

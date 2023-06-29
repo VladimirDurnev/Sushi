@@ -1,14 +1,33 @@
-.wrapper{
-    width: 350px;
-    
+.wrapper {
+    height: 425px;
+    text-align: start;
+    position: relative;
+    margin: 50px 0px;
 }
 
-.wrapper img{
-    height: 300px;
+.wrapper img {
+    height: 220px;
     border-radius: 10px;
 }
+.wrapper p {
+    font-size: 14px;
+}
 
-.title{
+.title {
     display: flex;
     justify-content: space-between;
+    margin: 20px 0;
+}
+
+.description{
+    margin: 10px 0;
+}
+
+.price{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 300px;
 }
