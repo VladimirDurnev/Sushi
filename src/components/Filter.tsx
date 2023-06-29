@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
 
 import cl from '../style/Filter.module.css';
+import logo from '../assets/sushi.png';
 
 import { useAppSelector } from '../hooks';
 
@@ -34,16 +35,33 @@ const Filter: React.FC = () => {
     }, []);
 
     return (
-        <div ref={wrapperRef} className={cl.wrapper + ' ' + (isSticky ? cl.active : '')}>
+        <div
+            ref={wrapperRef}
+            className={cl.wrapper + ' ' + (isSticky ? cl.active : '')}
+        >
             <div className={cl.container}>
+                {isSticky && (
+                    
+                    <Link
+                        activeClass="active"
+                        to="home"
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}
+                        className={cl.category}
+                    >
+                        <img className={cl.logo} src={logo} alt="logo"></img>
+                    </Link>
+                )}
                 {category.map((item) => (
                     <Link
                         activeClass="active"
                         to={item}
                         spy={true}
                         smooth={true}
-                        offset={25}
-                        duration={250}
+                        offset={-100}
+                        duration={500}
                         className={cl.category}
                     >
                         {item}

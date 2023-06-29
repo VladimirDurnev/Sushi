@@ -7,7 +7,7 @@ import logo from '../assets/sushi.png';
 import Button from './UI/Button';
 const Header: React.FC = () => {
     return (
-        <div className={cl.wrapper}>
+        <div id="home" className={cl.wrapper}>
             <div className={cl.container}>
                 <div className={cl.company}>
                     <Link to="">
