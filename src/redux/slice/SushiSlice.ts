@@ -26,13 +26,6 @@ export const fetchSushi = createAsyncThunk<AppItem[]>(
     }
 );
 
-// export const fetchingSushi = createAsyncThunk<AppItem[]>(
-//     'sushi/fetchSushi',
-//     async () => {
-//         const { data } = await axios.get('http://localhost:3000/sushi');
-//         return data;
-//     }
-// )
 
 const initialState: AppState = {
     list: [],

@@ -23,7 +23,12 @@ const Header: React.FC = () => {
                     </div>
                 </div>
                 <Link to="user">
-                    <Button>Войти</Button>
+                    <Button
+                        width={100}
+                        height={35}
+                    >
+                        Войти
+                    </Button>
                 </Link>
             </div>
         </div>

@@ -41,7 +41,6 @@ const Filter: React.FC = () => {
         >
             <div className={cl.container}>
                 {isSticky && (
-                    
                     <Link
                         activeClass="active"
                         to="home"
@@ -68,7 +67,12 @@ const Filter: React.FC = () => {
                     </Link>
                 ))}
                 <Link to="cart">
-                    <Button>Корзрна</Button>
+                    <Button
+                        background="linear-gradient(to bottom right, #ff6956, #921003)"
+                        color="rgba(255,255,255)"
+                    >
+                        Корзрна
+                    </Button>
                 </Link>
             </div>
         </div>

@@ -1,7 +1,12 @@
 .MyButton{
     border-radius: 30px;
-    background-color: #ff6956;
-    border-color: 1px solid black;
+    background-color: rgba(0, 0, 0, 0);
+    border-color:#ff6956;
+    color: #ff6956;
     width: 140px;
     height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    
 }
