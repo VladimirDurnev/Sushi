@@ -19,7 +19,7 @@ const Filter: React.FC = () => {
 
             const rect = wrapper.getBoundingClientRect();
             const scrollTop =
-                window.pageYOffset || document.documentElement.scrollTop;
+                window.scrollY || document.documentElement.scrollTop;
 
             if (scrollTop >= rect.top) {
                 setIsSticky(true);
