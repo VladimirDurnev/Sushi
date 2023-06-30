@@ -17,6 +17,7 @@ export interface AppItem {
 interface AppState {
     list: AppItem[];
     category: string[];
+    promotion: string[];
 }
 export const fetchSushi = createAsyncThunk<AppItem[]>(
     'sushi/fetchSushi',
@@ -25,11 +26,18 @@ export const fetchSushi = createAsyncThunk<AppItem[]>(
         return data;
     }
 );
-
+export const fetchPromotion = createAsyncThunk(
+    'sushi/fetchPromotion',
+    async () => {
+        const { data } = await axios.get('http://localhost:3000/promotion');
+        return data;
+    }
+);
 
 const initialState: AppState = {
     list: [],
     category: [],
+    promotion: [],
 };
 
 export const SushiSlice = createSlice({
@@ -54,6 +62,9 @@ export const SushiSlice = createSlice({
                 state.category = [...new Set(arr)];
             })
             .addCase(fetchSushi.rejected, (state, action) => {});
+        builder.addCase(fetchPromotion.fulfilled, (state, action) => {
+            state.promotion = action.payload;
+        });
     },
 });
 
