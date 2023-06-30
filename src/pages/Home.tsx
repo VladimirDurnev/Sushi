@@ -5,7 +5,7 @@ import DemoCarousel from '../components/UI/Carousel';
 const Home = () => {
     return (
         <>
-            <DemoCarousel></DemoCarousel>
+            <DemoCarousel ></DemoCarousel>
             <ListItem></ListItem>
         </>
     );
