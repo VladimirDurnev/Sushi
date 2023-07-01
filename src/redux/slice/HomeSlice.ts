@@ -6,18 +6,19 @@ import axios from 'axios';
 export interface AppItem {
     id?: number;
     imgUrl: string;
-    title: string;
+    title?: string;
     mass: number;
     description: string;
     price: number;
     category: string;
-    rating: number;
+    rating?: number;
 }
 
 interface AppState {
     list: AppItem[];
     category: string[];
     promotion: string[];
+    overlay: boolean;
 }
 export const fetchSushi = createAsyncThunk<AppItem[]>(
     'sushi/fetchSushi',
@@ -38,15 +39,16 @@ const initialState: AppState = {
     list: [],
     category: [],
     promotion: [],
+    overlay: false,
 };
 
 export const SushiSlice = createSlice({
     name: 'sushi',
     initialState,
     reducers: {
-        // increment: (state) => {
-        //     state.value += 1;
-        // },
+        overlayTogle: (state) => {
+            state.overlay = !state.overlay;
+        },
         // decrement: (state) => {
         //     state.value -= 1;
         // },
@@ -59,6 +61,7 @@ export const SushiSlice = createSlice({
             .addCase(fetchSushi.fulfilled, (state, action) => {
                 state.list = action.payload;
                 const arr = state.list.map((obj) => obj.category);
+
                 state.category = [...new Set(arr)];
             })
             .addCase(fetchSushi.rejected, (state, action) => {});
@@ -68,6 +71,6 @@ export const SushiSlice = createSlice({
     },
 });
 
-// export const { increment, decrement, incrementByAmount } = SushiSlice.actions;
+export const { overlayTogle } = SushiSlice.actions;
 
 export default SushiSlice.reducer;

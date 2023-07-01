@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import SushiSlice from './slice/SushiSlice';
+import SushiSlice from './slice/HomeSlice';
 
 export const store = configureStore({
     reducer: { SushiSlice },

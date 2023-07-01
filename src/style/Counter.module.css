@@ -1,0 +1,21 @@
+.counter{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 25px;
+    background-color: rgb(178, 169, 157);
+    width: 100px;
+    height: 40px;
+    align-items: center;
+}
+.counter p {
+    font-size: 20px
+}
+
+.counter button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 40px;
+}
+
+

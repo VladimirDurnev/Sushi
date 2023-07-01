@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 
 import cl from '../style/Filter.module.css';
 import logo from '../assets/sushi.png';
@@ -7,6 +8,7 @@ import logo from '../assets/sushi.png';
 import { useAppSelector } from '../hooks';
 
 import Button from './UI/Button';
+import Item from './Item';
 
 const Filter: React.FC = () => {
     const { category } = useAppSelector((state) => state.SushiSlice);
@@ -41,7 +43,7 @@ const Filter: React.FC = () => {
         >
             <div className={cl.container}>
                 {isSticky && (
-                    <Link
+                    <ScrollLink
                         activeClass="active"
                         to="home"
                         spy={true}
@@ -51,10 +53,11 @@ const Filter: React.FC = () => {
                         className={cl.category}
                     >
                         <img className={cl.logo} src={logo} alt="logo"></img>
-                    </Link>
+                    </ScrollLink>
                 )}
                 {category.map((item) => (
-                    <Link
+                    <ScrollLink
+                        key={item}
                         activeClass="active"
                         to={item}
                         spy={true}
@@ -64,16 +67,16 @@ const Filter: React.FC = () => {
                         className={cl.category}
                     >
                         {item}
-                    </Link>
+                    </ScrollLink>
                 ))}
-                <Link to="cart">
+                <RouterLink to="Cart">
                     <Button
                         background="linear-gradient(to bottom right, #ff6956, #921003)"
                         color="rgba(255,255,255)"
                     >
                         Корзрна
                     </Button>
-                </Link>
+                </RouterLink>
             </div>
         </div>
     );

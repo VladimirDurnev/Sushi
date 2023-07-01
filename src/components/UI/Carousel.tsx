@@ -8,17 +8,22 @@ const DemoCarousel: React.FC = () => {
     const { promotion } = useAppSelector((state) => state.SushiSlice);
     return (
         <Carousel
-            showThumbs={false}
+            showThumbs={true}
             emulateTouch={true}
             infiniteLoop={true}
             selectedItem={0}
             useKeyboardArrows={true}
             swipeScrollTolerance={50}
             showStatus={false}
+            showArrows={false}
         >
             {promotion.map((item) => (
-                <div>
-                    <img src={item} alt="new" />
+                <div key={item}>
+                    <img
+                        style={{ borderRadius: '25px' }}
+                        src={item}
+                        alt="item"
+                    />
                 </div>
             ))}
         </Carousel>
