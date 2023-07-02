@@ -3,6 +3,9 @@
     text-align: start;
     position: relative;
     margin: 50px 0px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .wrapper img {
@@ -10,13 +13,14 @@
     border-radius: 10px;
 }
 .wrapper p {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .title {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
+    align-items: center;
 }
 
 .description{
@@ -29,5 +33,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 300px;
+    width: 327.5px;
+    align-items: center;
 }

@@ -5,15 +5,17 @@
     background-color: rgb(178, 169, 157);
     width: 100px;
     height: 40px;
-    align-items: center;
-}
-.counter p {
-    font-size: 20px
+    align-items: center; 
+    font-size: 22px;
+    font-weight: 500;
 }
 
-.counter button{
+
+button{
+    padding: 0;
     border: none;
-    outline: none;
+    font: inherit;
+    color: inherit;
     background-color: transparent;
     font-size: 40px;
 }

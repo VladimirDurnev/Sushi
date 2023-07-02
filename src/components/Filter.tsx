@@ -6,12 +6,15 @@ import cl from '../style/Filter.module.css';
 import logo from '../assets/sushi.png';
 
 import { useAppSelector } from '../hooks';
+import { selectCart } from '../redux/slice/CartSlice';
+
+import { selectSushi } from '../redux/slice/HomeSlice';
 
 import Button from './UI/Button';
-import Item from './Item';
 
 const Filter: React.FC = () => {
-    const { category } = useAppSelector((state) => state.SushiSlice);
+    const { category } = useAppSelector(selectSushi);
+    const { cart } = useAppSelector(selectCart);
     const [isSticky, setIsSticky] = useState(false);
     const wrapperRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
@@ -74,7 +77,7 @@ const Filter: React.FC = () => {
                         background="linear-gradient(to bottom right, #ff6956, #921003)"
                         color="rgba(255,255,255)"
                     >
-                        Корзрна
+                        {(cart.length > 0) ? 'Корзрна ' + cart.length : 'Корзрна'}
                     </Button>
                 </RouterLink>
             </div>

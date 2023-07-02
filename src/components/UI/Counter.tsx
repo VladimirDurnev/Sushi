@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
+
 import cl from '../../style/Counter.module.css';
-import plus from '../../assets/plus.png';
-const Counter: React.FC = () => {
+
+interface ICounter {
+    children?: number;
+    hendleClick?: MouseEventHandler<HTMLDivElement>;
+    hendlePlus: MouseEventHandler<HTMLSpanElement>;
+    hendleMinus: MouseEventHandler<HTMLSpanElement>;
+}
+
+const Counter: React.FC<ICounter> = ({
+    children,
+    hendleClick,
+    hendlePlus,
+    hendleMinus,
+}) => {
     return (
-        <div className={cl.counter}>
-            <button>-</button>
-            <p>1</p>
-            <button>
-                <img src={plus} alt="" />
-            </button>
+        <div onClick={hendleClick} className={cl.counter}>
+            <span onClick={hendleMinus}>-</span>
+            <span>{children}</span>
+            <span onClick={hendlePlus}>+</span>
         </div>
     );
 };

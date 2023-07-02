@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { useAppSelector } from '../hooks';
+import { selectSushi } from '../redux/slice/HomeSlice';
 import cl from '../style/ListItem.module.css';
 
 import Item from './Item';
 
 const ListItem: React.FC = () => {
-    const { list } = useAppSelector((state) => state.SushiSlice);
+    const { list } = useAppSelector(selectSushi);
     const sushiSet = list.filter((obj) => obj.category === 'Наборы');
     const sushiPremium = list.filter((obj) => obj.category === 'Премиум');
     const sushiRoll = list.filter((obj) => obj.category === 'Роллы и суши');
@@ -15,7 +16,7 @@ const ListItem: React.FC = () => {
     const HotAndSalads = list.filter(
         (obj) => obj.category === 'Горячее и салаты'
     );
-    const { overlay } = useAppSelector((state) => state.SushiSlice);
+    
     return (
         <>
             <h2 id="Наборы" className={cl.title}>

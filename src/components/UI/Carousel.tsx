@@ -2,10 +2,11 @@ import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
+import { selectSushi } from '../../redux/slice/HomeSlice';
 import { useAppSelector } from '../../hooks';
 
 const DemoCarousel: React.FC = () => {
-    const { promotion } = useAppSelector((state) => state.SushiSlice);
+    const { promotion } = useAppSelector(selectSushi);
     return (
         <Carousel
             showThumbs={true}

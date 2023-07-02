@@ -11,22 +11,22 @@ const Header: React.FC = () => {
             <div className={cl.container}>
                 <div className={cl.company}>
                     <Link to="">
-                        <img src={logo} alt="logo" className={cl.logo} />
+                        <div className={cl.link}>
+                            <img src={logo} alt="logo" className={cl.logo} />
+
+                            <div className={cl.name}>
+                                <h1>Эдо</h1>
+                                <h3>Sushi & Rolls</h3>
+                            </div>
+                        </div>
                     </Link>
-                    <div>
-                        <h1>Эдо</h1>
-                        <h3>Sushi & Rolls</h3>
-                    </div>
                     <div className={cl.city}>
                         Ваш город Тольятти
                         <a href="tel:+380441234567">+38 (044) 123-45-67</a>
                     </div>
                 </div>
                 <Link to="user">
-                    <Button
-                        width={100}
-                        height={35}
-                    >
+                    <Button width={100} height={35}>
                         Войти
                     </Button>
                 </Link>

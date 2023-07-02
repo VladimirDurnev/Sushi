@@ -5,6 +5,7 @@ import { AppItem } from '../redux/slice/HomeSlice';
 import Counter from './UI/Counter';
 import Button from './UI/Button';
 
+
 const PopupItem: React.FC<AppItem> = ({
     imgUrl,
     title,
@@ -12,6 +13,7 @@ const PopupItem: React.FC<AppItem> = ({
     description,
     price,
 }) => {
+   
     return (
         <div className={cl.overlay}>
             <div className={cl.popup} onClick={(e) => e.stopPropagation()}>
@@ -23,7 +25,7 @@ const PopupItem: React.FC<AppItem> = ({
                         <p>{description}</p>
                     </div>
                     <div className={cl.counter}>
-                        <Counter></Counter>
+                        {/* <Counter></Counter> */}
                         <Button
                             background="linear-gradient(to bottom right, #ff6956, #921003)"
                             color="rgba(243, 237, 237)"

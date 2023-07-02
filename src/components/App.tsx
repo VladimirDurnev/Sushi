@@ -20,7 +20,7 @@ const App: React.FC = () => {
         <Routes>
             <Route path="/" element={<MainLayout />}>
                 <Route path="" element={<Home />} />
-                <Route path="sCart" element={<Cart />} />
+                <Route path="Cart" element={<Cart />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>

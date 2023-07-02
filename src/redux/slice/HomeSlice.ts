@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+import { RootState } from '../store';
 // import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface AppItem {
@@ -18,7 +19,6 @@ interface AppState {
     list: AppItem[];
     category: string[];
     promotion: string[];
-    overlay: boolean;
 }
 export const fetchSushi = createAsyncThunk<AppItem[]>(
     'sushi/fetchSushi',
@@ -39,23 +39,12 @@ const initialState: AppState = {
     list: [],
     category: [],
     promotion: [],
-    overlay: false,
 };
 
 export const SushiSlice = createSlice({
     name: 'sushi',
     initialState,
-    reducers: {
-        overlayTogle: (state) => {
-            state.overlay = !state.overlay;
-        },
-        // decrement: (state) => {
-        //     state.value -= 1;
-        // },
-        // incrementByAmount: (state, action: PayloadAction<number>) => {
-        //     state.value += action.payload;
-        // },
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(fetchSushi.fulfilled, (state, action) => {
@@ -71,6 +60,8 @@ export const SushiSlice = createSlice({
     },
 });
 
-export const { overlayTogle } = SushiSlice.actions;
+// export const { overlayTogle } = SushiSlice.actions;
+
+export const selectSushi = (state: RootState) => state.SushiSlice;
 
 export default SushiSlice.reducer;
