@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 25px 0;
+}
+.sushi {
+    height: 100px;
+    margin-right: 15px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+.close {
+    height: 20px;
+}

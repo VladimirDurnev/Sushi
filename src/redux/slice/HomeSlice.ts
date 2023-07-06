@@ -1,19 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+import { AppItem } from '../../Type';
 import { RootState } from '../store';
 // import type { PayloadAction } from '@reduxjs/toolkit';
-
-export interface AppItem {
-    id?: number;
-    imgUrl: string;
-    title?: string;
-    mass: number;
-    description: string;
-    price: number;
-    category: string;
-    rating?: number;
-}
 
 interface AppState {
     list: AppItem[];

@@ -1,7 +1,8 @@
 import React from 'react';
 
 import cl from '../style/PopupItem.module.css';
-import { AppItem } from '../redux/slice/HomeSlice';
+import { AppItem } from '../Type';
+
 import Counter from './UI/Counter';
 import Button from './UI/Button';
 

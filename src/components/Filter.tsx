@@ -77,7 +77,14 @@ const Filter: React.FC = () => {
                         background="linear-gradient(to bottom right, #ff6956, #921003)"
                         color="rgba(255,255,255)"
                     >
-                        {(cart.length > 0) ? 'Корзрна ' + cart.length : 'Корзрна'}
+                        {cart.length > 0
+                            ? 'Корзрна ' +
+                              cart.reduce(
+                                  (accumulator, currentValue) =>
+                                      accumulator + currentValue.count,
+                                  0
+                              )
+                            : 'Корзрна'}
                     </Button>
                 </RouterLink>
             </div>

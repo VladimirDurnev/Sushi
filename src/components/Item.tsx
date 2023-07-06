@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { selectCart } from '../redux/slice/CartSlice';
-import { AppItem } from '../redux/slice/HomeSlice';
-import { addItemToCart, deleteItemToCart } from '../redux/slice/CartSlice';
+import { AppItem } from '../Type';
+import {
+    addItemToCart,
+    deleteItemFromCart,
+    
+} from '../redux/slice/CartSlice';
 import cl from '../style/Item.module.css';
 
 import Button from './UI/Button';
@@ -17,17 +21,25 @@ const Item: React.FC<AppItem> = ({
     description,
     price,
     category,
+    count,
 }) => {
-    const { cart } = useAppSelector(selectCart);
+    const { cart, } = useAppSelector(selectCart);
     const [ItemToCart, setItemToCart] = useState(0);
     useEffect(() => {
-        setItemToCart(cart.filter((item) => item.id === id).length);
+        const arr = cart.filter((item) => item.id === id);
+        const b = arr.reduce(
+            (accumulator, currentValue) => accumulator + currentValue.count,
+            0
+        );
+
+        setItemToCart(b);
     }, [cart]);
     const dispatch = useAppDispatch();
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const hendlePopup = () => {
         setIsPopupOpen(!isPopupOpen);
     };
+
     const addToCart = () => {
         dispatch(
             addItemToCart({
@@ -38,12 +50,13 @@ const Item: React.FC<AppItem> = ({
                 description,
                 price,
                 category,
+                count,
             })
         );
     };
     const deleteItem = () => {
         if (id) {
-            dispatch(deleteItemToCart(id));
+            dispatch(deleteItemFromCart(id));
         }
     };
     return (
@@ -57,6 +70,7 @@ const Item: React.FC<AppItem> = ({
                         description={description}
                         price={price}
                         category={category}
+                        count={count}
                     />
                 )}
                 <img src={imgUrl} alt="" />
@@ -76,7 +90,7 @@ const Item: React.FC<AppItem> = ({
 
                 <div className={cl.price}>
                     <h3>{price + ' ₽'}</h3>
-                    {ItemToCart === 0 ? (
+                    {ItemToCart < 1 ? (
                         <Button
                             hendleClick={(e) => {
                                 e.stopPropagation();
@@ -88,7 +102,7 @@ const Item: React.FC<AppItem> = ({
                     ) : (
                         <Counter
                             hendleClick={(e) => e.stopPropagation()}
-                            hendlePlus={addToCart}
+                            hendlePlus={() => addToCart()}
                             hendleMinus={deleteItem}
                         >
                             {ItemToCart}
