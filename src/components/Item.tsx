@@ -4,8 +4,8 @@ import { useAppDispatch, useAppSelector } from '../hooks';
 import { selectCart } from '../redux/slice/CartSlice';
 import { AppItem } from '../Type';
 import {
-    addItemToCart,
-    deleteItemFromCart,
+    plusCounter,
+    minusCounter,
     
 } from '../redux/slice/CartSlice';
 import cl from '../style/Item.module.css';
@@ -42,7 +42,7 @@ const Item: React.FC<AppItem> = ({
 
     const addToCart = () => {
         dispatch(
-            addItemToCart({
+            plusCounter({
                 id,
                 imgUrl,
                 title,
@@ -56,7 +56,7 @@ const Item: React.FC<AppItem> = ({
     };
     const deleteItem = () => {
         if (id) {
-            dispatch(deleteItemFromCart(id));
+            dispatch(minusCounter(id));
         }
     };
     return (
@@ -73,7 +73,7 @@ const Item: React.FC<AppItem> = ({
                         count={count}
                     />
                 )}
-                <img src={imgUrl} alt="" />
+                <img className={cl.imgUrl} src={imgUrl} alt="" />
                 <div className={cl.title}>
                     <h3>
                         {title && title?.length > 20

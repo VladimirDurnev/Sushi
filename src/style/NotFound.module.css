@@ -1,0 +1,23 @@
+.wrapper{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+.title{
+    font-weight: 400;
+    font-size: 40px;
+    margin: 25px 0;
+}
+
+.description{
+    font-weight: 300;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 35px;
+}

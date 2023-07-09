@@ -7,17 +7,29 @@ import type { RootState } from '../store';
 
 interface CartState {
     cart: AppItem[];
+    allPrice: number;
 }
 
 const initialState: CartState = {
     cart: [],
+    allPrice: 0,
+};
+
+const addAllPrice = (state: any, cart: AppItem[]) => {
+    state.allPrice = cart.reduce(
+        (acc, obj: AppItem) => acc + obj.price * obj.count,
+        0
+    );
+};
+const clearCart = (state: any) => {
+    state.cart = [];
 };
 
 export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addItemToCart: (state, action: PayloadAction<AppItem>) => {
+        plusCounter: (state, action: PayloadAction<AppItem>) => {
             const index = state.cart.findIndex(
                 (item) => item.id === action.payload.id
             );
@@ -30,25 +42,34 @@ export const cartSlice = createSlice({
                     item.count += 1;
                 }
             }
+            addAllPrice(state, state.cart);
         },
-        deleteItemFromCart: (state, action: PayloadAction<number>) => {
+        minusCounter: (state, action: PayloadAction<number>) => {
             const index = state.cart.findIndex(
                 (item) => item.id === action.payload
             );
             if (index !== -1) {
                 const item = state.cart[index];
-                if (item && item.count !== undefined && item.count > 1) {
+                if (item && item.count !== undefined && item.count > 0) {
                     item.count -= 1;
                 }
-            } else {
+            }
+            if (state.cart[index].count === 0) {
                 state.cart.splice(index, 1);
             }
+            addAllPrice(state, state.cart);
+        },
+        deleteItem: (state, action: PayloadAction<number>) => {
+            const index = state.cart.findIndex(
+                (item) => item.id === action.payload
+            );
+            state.cart.splice(index, 1);
+            addAllPrice(state, state.cart);
         },
     },
 });
 
-export const { addItemToCart, deleteItemFromCart } =
-    cartSlice.actions;
+export const { plusCounter, minusCounter, deleteItem } = cartSlice.actions;
 
 export const selectCart = (state: RootState) => state.CartSlice;
 

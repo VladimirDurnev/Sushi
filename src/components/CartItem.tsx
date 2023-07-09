@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Counter from './UI/Counter';
 import { useAppDispatch, useAppSelector } from '../hooks';
-import { addItemToCart, deleteItemFromCart } from '../redux/slice/CartSlice';
+import {
+    plusCounter,
+    minusCounter,
+    deleteItem,
+} from '../redux/slice/CartSlice';
 import { selectCart } from '../redux/slice/CartSlice';
 import close from '../assets/close.png';
+
 import { AppItem } from '../Type';
 import cl from '../style/CartItem.module.css';
 const CartItem: React.FC<AppItem> = ({
@@ -19,9 +24,13 @@ const CartItem: React.FC<AppItem> = ({
 }) => {
     const dispatch = useAppDispatch();
     const { cart } = useAppSelector(selectCart);
+    const [priceItem, setPriceItem] = useState(price);
+    useEffect(() => {
+        setPriceItem(price * count);
+    });
     const addToCart = () => {
         dispatch(
-            addItemToCart({
+            plusCounter({
                 id,
                 imgUrl,
                 title,
@@ -29,25 +38,29 @@ const CartItem: React.FC<AppItem> = ({
                 description,
                 price,
                 category,
-                count
+                count,
             })
         );
+        setPriceItem(price * (count + 1));
     };
-    const deleteItem = () => {
-        if (id) {
-            dispatch(deleteItemFromCart(id));
-        }
+    const minus = () => {
+        id && dispatch(minusCounter(id));
+    };
+    const deleteElem = () => {
+        id && dispatch(deleteItem(id));
     };
     return (
         <div className={cl.wrapper}>
             <img className={cl.sushi} src={imgUrl} alt="" />
             <div className={cl.description}>
                 <div>{title}</div>
-                {mass + 'г'}
+                {mass + ' г'}
             </div>
-            <Counter hendlePlus={addToCart} hendleMinus={deleteItem}>{count}</Counter>
-            {price + ' ₽'}
-            <img className={cl.close} src={close} alt="" />
+            <Counter hendlePlus={addToCart} hendleMinus={minus}>
+                {count}
+            </Counter>
+            {priceItem + ' ₽'}
+            <img className={cl.close} src={close} alt="" onClick={deleteElem} />
         </div>
     );
 };

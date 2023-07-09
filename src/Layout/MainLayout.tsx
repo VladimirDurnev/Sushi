@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Filter from '../components/Filter';
+
 
 // import  './MainLayout.css';
 import cl from '../style/MainLayout.module.css';
@@ -16,7 +16,7 @@ const MainLayout: React.FC = () => {
                 <div className={cl.container}>
                     <Outlet />
                 </div>
-                <Footer></Footer>
+                {/* <Footer></Footer> */}
             </div>
         </>
     );
