@@ -11,7 +11,29 @@ interface CartState {
 }
 
 const initialState: CartState = {
-    cart: [],
+    cart: [
+        {
+            id: 1,
+            imgUrl: 'https://yobi.efood.dev/images/_2xRIVufmElKDKLTm3H7qs7QYi9P4EdKjQHaXm1p4Pg/pr:large/b3dxaGFyMDE2MDJj/OTBqcmFkb3lleDdo/cnVpcA',
+            title: 'ЁбиМокуёби',
+            mass: 710,
+            description: 'Сяке хат, Филадельфия темпура, Бешеный лосось',
+            price: 949,
+            category: 'Наборы',
+            count: 1,
+        },
+        {
+            id: 2,
+            imgUrl: 'https://yobi.efood.dev/images/-Zujz5rkhLe3ETZDtT9rkW2ZGUOS7f_T0DIALZ2XTpg/pr:large/NWZ6ZWV4eWp5bXM4/cjZtbmdnaGh3MHVy/bm9xbA',
+            title: 'Филадельфия BIG',
+            mass: 305,
+            description:
+                'Рис, мицукан, сахар, комбу, соль, нори, сыр сливочный, огурец, лосось',
+            price: 649,
+            category: 'Премиум',
+            count: 1,
+        },
+    ],
     allPrice: 0,
 };
 

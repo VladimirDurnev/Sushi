@@ -6,7 +6,6 @@ import cl from '../style/NotFound.module.css';
 const NotFound = () => {
     return (
         <div className={cl.wrapper}>
-            {/* <h3 className={cl.title}>404</h3> */}
             <img src={error} alt="" />
             <h4 className={cl.title}>Кажется что-то пошло не так!</h4>
             <h5 className={cl.description}>

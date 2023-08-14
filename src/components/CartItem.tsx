@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import Counter from './UI/Counter';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import {
     plusCounter,
@@ -12,6 +11,9 @@ import close from '../assets/close.png';
 
 import { AppItem } from '../Type';
 import cl from '../style/CartItem.module.css';
+
+import Counter from './UI/Counter';
+
 const CartItem: React.FC<AppItem> = ({
     id,
     imgUrl,
@@ -51,16 +53,30 @@ const CartItem: React.FC<AppItem> = ({
     };
     return (
         <div className={cl.wrapper}>
-            <img className={cl.sushi} src={imgUrl} alt="" />
-            <div className={cl.description}>
-                <div>{title}</div>
-                {mass + ' г'}
+            <div className={cl.flex}>
+                <img className={cl.sushi} src={imgUrl} alt="" />
+                <div className={cl.description}>
+                    <div>{title}</div>
+                    <div className={cl.mass}>{mass + ' г'}</div>
+                </div>
             </div>
-            <Counter hendlePlus={addToCart} hendleMinus={minus}>
-                {count}
-            </Counter>
-            {priceItem + ' ₽'}
-            <img className={cl.close} src={close} alt="" onClick={deleteElem} />
+            <div className={cl.flex}>
+                <Counter
+                    width={100}
+                    height={35}
+                    hendlePlus={addToCart}
+                    hendleMinus={minus}
+                >
+                    {count}
+                </Counter>
+                <div>{priceItem + ' ₽'}</div>
+                <img
+                    className={cl.close}
+                    src={close}
+                    alt=""
+                    onClick={deleteElem}
+                />
+            </div>
         </div>
     );
 };
